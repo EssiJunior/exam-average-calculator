@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary files
+HTML
+CSS
+JavaScript
+RES
