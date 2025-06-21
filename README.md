@@ -1,12 +1,70 @@
-# React + Vite
+# Exam Average Calculator Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a web application that calculates the weighted average (Moyenne Générale Pondérée - MGP) for University of Yaounde I students.
 
-Currently, two official plugins are available:
+This project was created with [Vite](https://vitejs.dev/) and [React](https://reactjs.org/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Available Scripts
 
-## Expanding the ESLint configuration
+In the project directory, you can run:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+pnpm install
+```
+
+Installs all the project dependencies.
+
+```bash
+pnpm run dev
+```
+
+Runs the app in development mode.\
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+## API Integration
+
+The frontend communicates with the following API endpoints:
+
+- `POST /calculate`: Calculate exam average
+- `GET /results`: Get all calculation results
+- `GET /results/{id}`: Get a specific result by ID
+
+## Project Structure
+
+```
+.
+├── public/             # Static files
+├── src/
+│   ├── components/    # Reusable UI components
+│   ├── pages/          # Page components
+│   ├── services/       # API service functions
+│   ├── utils/          # Utility functions
+│   ├── App.jsx         # Main application component
+│   └── main.jsx        # Application entry point
+├── .gitignore
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── README.md           # This file
+└── vite.config.js      # Vite configuration
+```
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Create a `.env` file in the root directory and add your environment variables
+4. Start the development server:
+   ```bash
+   pnpm run dev
+   ```
+
+## About
+
+This project was developed by [NDANG ESSI Pierre Junior](https://github.com/EssiJunior)
