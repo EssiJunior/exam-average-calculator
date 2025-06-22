@@ -3,11 +3,6 @@
 
 
 .splash {
-    background-color: #CFE8EF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: Arial;
 
     img {

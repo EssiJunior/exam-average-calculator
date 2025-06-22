@@ -2,8 +2,8 @@
 
 
 @theme {
-    --primary-color: #ff9900;
-    --secondary-color: #146eb4;
+    --color-primary: #ff9900;
+    --color-secondary: #146eb4;
 }
 
 :root {
