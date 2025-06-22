@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 
+
+
 .splash {
-    height: 100vh;
-    width: 100%;
     background-color: #CFE8EF;
     display: flex;
     flex-direction: column;

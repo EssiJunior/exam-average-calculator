@@ -12,7 +12,7 @@ import logo from "../assets/2.png"
 
 const SplashContent = () => {
     return (
-        <div className='splash bg-red-400'>
+        <div className='splash w-screen h-screen'>
             <img src={logo} alt="logo" loading='lazy'/>
             <h2>Manage your tasks easily</h2>
             <Loader />

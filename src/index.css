@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+
+@theme {
+    --primary-color: #ff9900;
+    --secondary-color: #146eb4;
+}
+
 :root {
     font-family: "Edu NSW ACT Hand Pre", cursive;
     line-height: 1.5;
@@ -13,6 +19,9 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    --primary-color: var(--primary-color);
+    --secondary-color: var(--secondary-color);
 }
 
 a {
