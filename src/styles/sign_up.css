@@ -1,5 +1,4 @@
 .sign-up {
-    // background-color: red;
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -7,34 +6,25 @@
     justify-content: center;
     align-items: center;
     font-family: Founders Grotesk, monospace;
+
     @media (max-width: 990px) {
         flex-direction: column-reverse;
         height: 150vh;
     }
+
     .form {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 50%;
         height: 100%;
-        // margin: 5rem auto;
+
         @media screen and (max-width: 990px) {
             height: 70%;
             width: 100%;
         }
-        // @media screen and (max-width: 490px) {
-        //     width: 100%;
-        //     margi
-        // }
-        // @media screen and (min-width: 491px) and (max-width: 590px) {
-        //     width: 80%;
-        // }
-        // @media screen and (min-width: 591px) and (max-width: 700px) {
-        //     width: 70%;
-        // }
-        // @media screen and (min-width: 701px) and (max-width: 990px) {
-        //     width: 60%;
-        // }
+
+
         .holder {
             width: 70%;
             height: 100%;
@@ -42,27 +32,34 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+
             @media screen and (max-width: 490px) {
                 width: 90%;
             }
+
             @media screen and (min-width: 491px) and (max-width: 590px) {
                 width: 80%;
             }
+
             @media screen and (min-width: 591px) and (max-width: 700px) {
                 width: 70%;
             }
+
             @media screen and (min-width: 701px) and (max-width: 990px) {
                 width: 60%;
             }
-            section{
+
+            section {
                 width: 100%;
             }
-            .action{
+
+            .action {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 width: 100%;
-                .alt{
+
+                .alt {
                     display: flex;
                     justify-content: space-evenly;
                     align-items: center;
@@ -70,12 +67,14 @@
                 }
             }
         }
+
         img {
             width: 60%;
             height: 100%;
             object-fit: cover;
         }
     }
+
     .illustration {
         width: 50%;
         height: 100%;
@@ -84,6 +83,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
+
         @media (max-width: 990px) {
             height: 30%;
             width: 100%;
@@ -99,6 +99,7 @@ p {
         margin: 12px 0;
         text-align: center;
     }
+
     @media (min-width: 701px) and (max-width: 990px) {
         margin: 16px 0;
         text-align: center;

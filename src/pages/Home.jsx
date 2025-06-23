@@ -5,48 +5,54 @@ import { Link } from "react-router-dom";
 // COMPONENTS AND UTILITIES
 import withSplashScreen from "../hoc/withSplashScreen";
 import { defaultOptions } from "../utils";
+import Button from "../components/Button/Button";
 
 // ASSETS
-import lottie from "../assets/lotties/task1.json";
+import { calculate } from "../assets";
 
 // STYLES
 import "../styles/home.css";
 
 function Home() {
   return (
-    <main className="home h-dvh w-dvw relative grid grid-cols-2">
+    <main className="home h-dvh w-full relative grid grid-cols-1 lg:grid-cols-[1.5fr_2fr]">
       <div className="introduction">
-        <div className="first" />
-        <h1 className="gradient__text">
-          Welcome on
-          <br />
-          <code>Scoreify</code>
-        </h1>
+        <p>
+          Hey <span>🫡</span>
+        </p>
+        <p className="gradient__text">
+          You're on <code>Scoreify</code>
+        </p>
         <div className="divider"></div>
         <p>
-          In this plateform, you will manage your tasks very easily. This stuff
-          of recording some important tasks indeed has all its importance, for
-          that we offer you a great user experience.
+          You want to be sure of your average ? You want to determine it before
+          your school does ?
         </p>
-        <div class="wrapper">
-          <Link class="btn" to="/management">
+        <p>
+          Scoreify does it for you. <span>😎</span>
+        </p>
+        <div className="wrapper">
+          <Button />
+
+          {/* <Link className="btn" to="/management">
             Get started
           </Link>
-          <Link class="btn" to="/signin">
+          <Link className="btn" to="/signin">
             Sign In
-          </Link>
+          </Link> */}
         </div>
       </div>
-      <div className="illustration">
+      <div className="illustration bg-secondary/20">
         <Lottie
-          options={defaultOptions(lottie)}
+          options={defaultOptions(calculate)}
           speed={0.5}
-          height={'80%'}
-          width={'80%'}
+          height={"70%"}
+          width={"70%"}
         />
       </div>
     </main>
   );
 }
 
-export default withSplashScreen(Home);
+export default Home;
+// export default withSplashScreen(Home);
