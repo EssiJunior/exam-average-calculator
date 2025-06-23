@@ -3,8 +3,6 @@
 
 
 .splash {
-    font-family: Arial;
-
     img {
         width: 200px;
 
@@ -19,13 +17,15 @@ h2 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 25px;
+    font-size: clamp(12px, 80vw, 25px);
     letter-spacing: 0.3rem;
     margin: 0;
-    font-family: "Montserrat", "Source Sans Pro", sans-serif;
     animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+    overflow: hidden;
+    white-space: no-wrap;
+    text-overflow: ellipsis;
 
-    @media screen and (max-width: 365px) {
+    /* @media screen and (max-width: 365px) {
         font-size: 11px;
     }
 
@@ -43,7 +43,7 @@ h2 {
 
     @media screen and (min-width: 651px) and (max-width: 990px) {
         font-size: 35px;
-    }
+    } */
 }
 
 

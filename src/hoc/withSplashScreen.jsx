@@ -25,14 +25,8 @@ const SplashContent = () => {
 
   return (
     <div className="splash w-screen h-screen flex flex-col items-center justify-center bg-secondary">
-      <img
-        src={logo}
-        alt="logo"
-        loading="lazy"
-      />
-      <h2>
-        Be sure of your exam average
-      </h2>
+      <img src={logo} alt="logo" loading="lazy" />
+      <h2>Be sure of your exam average</h2>
 
       {!showContent && <Loader />}
     </div>
