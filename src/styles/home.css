@@ -1,6 +1,6 @@
 .salute-emoji {
     display: inline-block;
-    animation: salute 2s ease-in-out infinite;
+    animation: salute 3s ease-in-out infinite;
     transform-origin: 50% 90%;
 }
 
