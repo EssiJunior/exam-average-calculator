@@ -17,8 +17,8 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <main className="home h-dvh w-full relative grid grid-cols-1 lg:grid-cols-[1.5fr_2fr]">
-      <div className="introduction">
+    <main className="home h-dvh w-full relative grid lg:grid-rows-1  grid-cols-1 lg:grid-cols-[1.5fr_2fr] bg-white text-black">
+      <div className="p-5 flex flex-col justify-center items-start gap-10 order-2 lg:order-1">
         <p>
           Hey <span className="salute-emoji">🫡</span>
         </p>
@@ -38,7 +38,7 @@ function Home() {
           <Button text="Sign In" handleClick={() => navigate('/signin')} />
         </div>
       </div>
-      <div className="illustration bg-secondary/20">
+      <div className="flex justify-center items-center bg-secondary/20 order-1 lg:order-2">
         <Lottie
           options={defaultOptions(calculate)}
           speed={0.5}
