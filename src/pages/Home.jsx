@@ -1,18 +1,12 @@
 // REACT IMPORTS
-import Lottie from "react-lottie";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // COMPONENTS AND UTILITIES
 import withSplashScreen from "../hoc/withSplashScreen";
-import { defaultOptions } from "../utils";
 import Button from "../components/Button";
 
 // ASSETS
 import {
-  calculate,
-  calculator,
-  calculatorWhite,
-  calculatorBlack,
   home,
 } from "../assets";
 
@@ -59,29 +53,9 @@ function Home() {
       <div className="hidden md:flex justify-center items-center bg-secondary/20">
         <img src={home} alt="home" className="w-[100%] h-[100%] object-cover" />
       </div>
-
-      {/* Orbits */}
-      {/* <div className="max-lg:hidden absolute -top-1/4 -left-1/6 w-2/3 aspect-square border border-secondary/80 rounded-full ">
-        <div className="orbit relative h-full rounded-full ">
-          <img
-            src={calculatorBlack}
-            alt="bulb"
-            className="salute-emoji absolute right-0 bottom-[240px] w-[85px]"
-          />
-        </div>
-      </div>
-      <div className="max-lg:hidden absolute -top-[40px] -left-[75px] w-1/2 aspect-square border border-primary rounded-full">
-        <div className="orbit relative h-full rounded-full ">
-          <img
-            src={calculator}
-            alt="calculator"
-            className="salute-emoji absolute right-[50px] top-[100px] w-[75px]"
-          />
-        </div>
-      </div> */}
     </main>
   );
 }
 
-export default Home;
+export default withSplashScreen(Home);
 // export default withSplashScreen(Home);
