@@ -49,54 +49,21 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.btn {
-    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
-    --border-width: .125em;
-    --curve-size: .5em;
-    --blur: 30px;
-    --bg: #47abcd;
-    --color: #fff;
-    color: var(--color);
-    /* use position: relative; so that BG is only for .btn */
-    position: relative;
-    isolation: isolate;
-    display: inline-grid;
-    place-content: center;
-    padding: .5em 1.5em;
-    font-size: 17px;
-    border: 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 0 1rem;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
 
-    clip-path: polygon(
-            /* Top-left */
-            0% var(--curve-size),
-
-            var(--curve-size) 0,
-            /* top-right */
-            100% 0,
-            100% calc(100% - var(--curve-size)),
-
-            /* bottom-right 1 */
-            calc(100% - var(--curve-size)) 100%,
-            /* bottom-right 2 */
-            0 100%);
-    transition: color 250ms;
+.motion-emoji {
+    display: inline-block;
+    animation: move-up-down 3s ease-in-out infinite;
+    transform-origin: 50% 90%;
 }
 
-.btn::after,
-.btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-}
+@keyframes move-up-down {
 
-.btn::before {
-    background: var(--border-color);
-    background-size: 300% 300%;
-    animation: move-bg7234 5s ease infinite;
-    z-index: -2;
+    0%,
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(10deg) translateY(-5px);
+    }
 }

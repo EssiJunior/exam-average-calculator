@@ -22,7 +22,7 @@ function Home() {
       <div className="flex justify-center items-center max-md:h-dvh mobile-home max-md:p-5">
         <div className="p-5 flex flex-col justify-center items-start gap-10 max-md:backdrop-blur-sm max-md:bg-black/40 max-md:w-[calc(100%-40px)] rounded-4xl">
           <p>
-            Hey <span className="salute-emoji">🫡</span>
+            Hey <span className="motion-emoji">🫡</span>
           </p>
           <p className="">
             You're on{" "}
@@ -39,10 +39,12 @@ function Home() {
           <p>
             Scoreify does it for you. <span className="emoji">😎</span>
           </p>
+
+          {/* Buttons */}
           <div className="flex gap-4 flex-wrap">
             <Button
               text="Get started"
-              handleClick={() => navigate("/management")}
+              handleClick={() => navigate("/processing")}
             />
             <Button text="Sign In" handleClick={() => navigate("/signin")} />
           </div>

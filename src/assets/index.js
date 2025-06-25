@@ -2,6 +2,7 @@ import logo from "./logo/logo.png"
 
 // IMAGES
 import home from "./images/home.webp"
+import processing from "./images/processing.webp"
 
 // ICONS
 import calculator from "./icons/calculator.png"
@@ -10,12 +11,17 @@ import calculatorBlack from "./icons/calculator-black.png"
 import bulb from "./icons/bulb.png"
 import copy from "./icons/copy.png"
 
+// TEMPLATE ICONS
+import uy1 from './templates/UY1.png'
+
 export {
     logo,
     home,
+    processing,
     calculator,
     calculatorWhite,
     calculatorBlack,
     bulb,
-    copy
+    copy,
+    uy1
 }

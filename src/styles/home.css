@@ -6,21 +6,3 @@
         background-image: none;
     }
 }
-
-.salute-emoji {
-    display: inline-block;
-    animation: salute 3s ease-in-out infinite;
-    transform-origin: 50% 90%;
-}
-
-@keyframes salute {
-
-    0%,
-    100% {
-        transform: rotate(0deg) translateY(0);
-    }
-
-    50% {
-        transform: rotate(5deg) translateY(-5px);
-    }
-}
