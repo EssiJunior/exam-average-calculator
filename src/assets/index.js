@@ -1,9 +1,7 @@
 import logo from "./logo/logo.png"
-import home from "./images/home.webp"
 
-// LOTTIES
-import calculation from "./lotties/calculation.json"
-import calculate from "./lotties/calculate.json"
+// IMAGES
+import home from "./images/home.webp"
 
 // ICONS
 import calculator from "./icons/calculator.png"
@@ -15,8 +13,6 @@ import copy from "./icons/copy.png"
 export {
     logo,
     home,
-    calculation,
-    calculate,
     calculator,
     calculatorWhite,
     calculatorBlack,
