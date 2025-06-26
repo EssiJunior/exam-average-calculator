@@ -5,30 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
 // ASSETS
-import { calculator, processing, uy1 } from "../assets";
+import { processing } from "../assets";
 
 import "../styles/template.css";
 import { useState } from "react";
+import { templateCards } from "../utils/data";
 
 // Card data
-const templateCards = [
-  {
-    id: 1,
-    title: "University of Yaounde I",
-    icon: uy1,
-    color: "from-emerald-500 to-teal-400",
-    ringColor: "ring-emerald-500",
-    bubbleColor: "bg-emerald-500",
-  },
-  {
-    id: 2,
-    title: "Custom Template",
-    icon: calculator,
-    color: "from-purple-500 to-pink-500",
-    ringColor: "ring-purple-500",
-    bubbleColor: "bg-purple-500",
-  },
-];
 
 function Template() {
   const navigate = useNavigate();
@@ -59,6 +42,7 @@ function Template() {
                 }`}
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
+                onClick={() => navigate(`/calculation/${card.id}`)}
               >
                 {/* Background gradient effect */}
                 <div
