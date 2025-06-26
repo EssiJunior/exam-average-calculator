@@ -44,7 +44,7 @@ function Home() {
           <div className="flex gap-4 flex-wrap">
             <Button
               text="Get started"
-              handleClick={() => navigate("/processing")}
+              handleClick={() => navigate("/template")}
             />
             <Button text="Sign In" handleClick={() => navigate("/signin")} />
           </div>
