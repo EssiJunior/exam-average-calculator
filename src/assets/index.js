@@ -10,6 +10,7 @@ import calculatorWhite from "./icons/calculator-white.png"
 import calculatorBlack from "./icons/calculator-black.png"
 import bulb from "./icons/bulb.png"
 import copy from "./icons/copy.png"
+import info from "./icons/icons8-info.svg"
 
 // TEMPLATE ICONS
 import uy1 from './templates/UY1.png'
@@ -18,6 +19,7 @@ export {
     logo,
     home,
     processing,
+    info,
     calculator,
     calculatorWhite,
     calculatorBlack,
