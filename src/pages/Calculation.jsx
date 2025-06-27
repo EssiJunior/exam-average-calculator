@@ -9,6 +9,9 @@ import { calculatorDataByTemplate } from "../utils/data";
 import Button from "../components/Button";
 import Modal from "../components/Modal";
 import { useState } from "react";
+import { useFieldArray, useForm } from "react-hook-form";
+import Input from "../components/Input";
+import Select from "../components/Select";
 
 function Calculation() {
   const params = useParams();
@@ -16,13 +19,41 @@ function Calculation() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  console.log(data);
-
   const handleSpace = (e) => {
     if (e.code === "Space") {
       e.preventDefault();
       setIsModalOpen(true);
     }
+  };
+
+  // Initialize React Hook Form
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues: {
+      subjects: [{ code: "", average: "", credit: "3" }],
+    },
+  });
+
+  // Initialize field array
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "subjects",
+  });
+
+  // Handle form submission
+  const onSubmit = (data) => {
+    console.log("Form submitted:", data);
+    // Here you'll add the calculation logic
+  };
+
+  // Add new subject
+  const addSubject = () => {
+    append({ code: "", average: "", credit: "3" });
   };
 
   return (
@@ -58,7 +89,9 @@ function Calculation() {
 
           {/* Action */}
           <div className="relative flex mt-10">
-            <span className="absolute right-5 -top-[40%] text-black text-[10px]">[ Space ]</span>
+            <span className="absolute right-5 -top-[40%] text-gray-700 text-[10px]">
+              [ Space ]
+            </span>
             <Button
               text={"Calculate my average !"}
               handleClick={() => setIsModalOpen(true)}
@@ -83,10 +116,6 @@ function Calculation() {
         title="Calculate Your Average"
       >
         <div className="space-y-4">
-          <p className="text-gray-600">
-            This is where your calculation form will go. You can add input
-            fields, select dropdowns, or any other form elements here.
-          </p>
           <div className="p-4 bg-blue-50 rounded-lg">
             <h3 className="font-medium text-blue-800">How it works:</h3>
             <p className="mt-1 text-sm text-blue-700">
@@ -94,6 +123,81 @@ function Calculation() {
               system will automatically compute your results.
             </p>
           </div>
+          // In your Modal component, replace the form with:
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div className="space-y-4 max-h-[40vh] overflow-y-auto p-2">
+              {fields.map((field, index) => (
+                <div
+                  key={field.id}
+                  className="grid grid-cols-12 gap-3 items-start"
+                >
+                  {/* Subject Code */}
+                  <Input
+                    label="Subject Code"
+                    name="code"
+                    register={register}
+                    errors={errors}
+                    index={index}
+                    className="col-span-4"
+                    type="text"
+                  />
+
+                  {/* Average */}
+                  <Input
+                    label="Average /100"
+                    name="average"
+                    register={register}
+                    errors={errors}
+                    index={index}
+                    className="col-span-3"
+                    type="number"
+                  />
+
+                  {/* Credits */}
+                  <Select
+                    label="Credits"
+                    name="credit"
+                    register={register}
+                    errors={errors}
+                    index={index}
+                    className="col-span-3"
+                    options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                  />
+
+                  {/* Remove Button */}
+                  <div className="col-span-2 flex items-end h-[60px]">
+                    {fields.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => remove(index)}
+                        className="p-2 text-red-500 hover:text-red-700"
+                        aria-label="Remove subject"
+                      >
+                        {/* <XMarkIcon className="h-5 w-5" /> */}✕
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-between items-center pt-2">
+              <button
+                type="button"
+                onClick={addSubject}
+                className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                + Add Another Subject
+              </button>
+
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Calculate Average
+              </button>
+            </div>
+          </form>
         </div>
       </Modal>
     </main>
