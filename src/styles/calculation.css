@@ -1,3 +1,12 @@
+.mobile-calculation {
+    background-image: url("../assets/images/calculation.webp");
+    @apply bg-cover bg-center bg-no-repeat;
+
+    @media (width > 768px) {
+        background-image: none;
+    }
+}
+
 .tooltip-text {
     width: clamp(200px, 80%, 320px);
     background-color: #333;

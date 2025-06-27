@@ -2,7 +2,7 @@
 
 // ASSETS
 import { useParams } from "react-router-dom";
-import { processing, info } from "../assets";
+import { info, calculation } from "../assets";
 
 import "../styles/calculation.css";
 import { calculatorDataByTemplate } from "../utils/data";
@@ -17,14 +17,14 @@ function Calculation() {
   return (
     <main className="template md:h-dvh w-full grid md:grid-rows-1 grid-cols-1 md:grid-cols-[1.5fr_2fr] bg-white text-black max-md:font-black relative overflow-hidden">
       {/* Texts */}
-      <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-template max-md:p-5">
+      <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-calculation max-md:p-5">
         <div className="p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
           <p>
             Here we go ! <span className="motion-emoji">🤓</span>
           </p>
           <p className="mt-8">You choosed</p>
           <p className="flex gap-2 relative">
-            <span className="overflow-hidden whitespace-nowrap text-ellipsis font-black md:text-[35px] sm:text-[25px] text-[15px] gradient__text ">
+            <span className="overflow-hidden whitespace-nowrap text-ellipsis font-black md:text-[35px] text-[25px] gradient__text ">
               {data.title}
             </span>
 
@@ -50,7 +50,7 @@ function Calculation() {
       {/* Illustration */}
       <div className="hidden md:flex justify-center items-center bg-secondary/20">
         <img
-          src={processing}
+          src={calculation}
           alt="home"
           className="w-[100%] h-[100%] object-cover"
         />

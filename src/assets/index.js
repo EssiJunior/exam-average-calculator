@@ -3,6 +3,7 @@ import logo from "./logo/logo.png"
 // IMAGES
 import home from "./images/home.webp"
 import processing from "./images/processing.webp"
+import calculation from "./images/calculation.webp"
 
 // ICONS
 import calculator from "./icons/calculator.png"
@@ -19,6 +20,7 @@ export {
     logo,
     home,
     processing,
+    calculation,
     info,
     calculator,
     calculatorWhite,
