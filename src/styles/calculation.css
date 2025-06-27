@@ -8,12 +8,10 @@
 }
 
 .tooltip-text {
-    width: clamp(200px, 80%, 320px);
     background-color: #333;
     color: white;
     border-radius: 6px;
     padding: 8px 12px;
-    font-size: 12px;
     line-height: 1.75;
     transition: opacity 0.3s, transform 0.3s;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -39,9 +37,9 @@
     transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .tooltip-text {
         width: 160px;
         font-size: 12px;
     }
-}
+} */

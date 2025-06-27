@@ -51,6 +51,7 @@ body {
 
 
 .motion-emoji {
+    width: 100px;
     display: inline-block;
     animation: move-up-down 3s ease-in-out infinite;
     transform-origin: 50% 90%;
