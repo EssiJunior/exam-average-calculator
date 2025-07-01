@@ -8,11 +8,13 @@ import SignIn from "./pages/SignIn";
 import Template from "./pages/Template";
 import Calculation from "./pages/Calculation";
 import Result from "./pages/Result";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route index element={<Home />} />
         <Route path="/template" element={<Template />} />
         <Route path="/calculation/:id" element={<Calculation />} />
