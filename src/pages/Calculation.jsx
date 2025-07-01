@@ -66,9 +66,11 @@ function Calculation() {
       {/* Texts */}
       <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-calculation max-md:p-5">
         <div className="p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
-          <p>
-            Here we go ! <span className="motion-emoji">🚀</span>
-          </p>
+          {params.id !== "custom" && (
+            <p>
+              Here we go ! <span className="motion-emoji">🚀</span>
+            </p>
+          )}
           <p className="mt-8">You choosed</p>
           <p className="flex gap-2 relative">
             <span className="overflow-hidden whitespace-nowrap text-ellipsis font-black md:text-[35px] text-[25px] gradient__text ">
@@ -87,16 +89,32 @@ function Calculation() {
             </span>
           </p>
 
+          {params.id === "custom" && (
+            <div>
+              <p className="max-w-[90%]">{data.hint}</p>
+              <div className="grid gap-1 mt-10 font-semibold">
+                <a
+                  href={`tel:${data.contact}`}
+                  className="text-secondary hover:opacity-80 transition-opacity"
+                >
+                  Tel: {data.contact}
+                </a>
+              </div>
+            </div>
+          )}
           {/* Action */}
-          <div className="relative flex mt-10">
-            <span className="absolute right-5 -top-[40%] text-gray-700 text-[10px]">
-              [ Space ]
-            </span>
-            <Button
-              text={"Calculate my average !"}
-              handleClick={() => setIsModalOpen(true)}
-            />
-          </div>
+
+          {params.id !== "custom" && (
+            <div className="relative flex mt-10">
+              <span className="absolute right-5 -top-[40%] text-gray-700 text-[10px]">
+                [ Space ]
+              </span>
+              <Button
+                text={"Calculate my average !"}
+                handleClick={() => setIsModalOpen(true)}
+              />
+            </div>
+          )}
         </div>
       </div>
 

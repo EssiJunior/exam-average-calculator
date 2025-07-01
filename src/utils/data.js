@@ -25,6 +25,13 @@ const calculatorDataByTemplate = {
     'uy1': {
         "title": "University of Yaounde I",
         "description": "The University of Yaounde I system converts numerical grades (0 - 100) into a standardized grading system. It returns: a formatted numerical grade (0.0 to 4.0), a letter grade (F to A), and a qualitative mention (e.g., 'Echec', 'Passable'). The grading scale is progressive, with specific score ranges mapped to each grade level. Higher scores yield better grades and mentions, starting from failing grades (F, E) through passing grades (D to A)."
+    },
+    'custom': {
+        "title": "Custom Template",
+        "description": "This option is for other average calculation systems",
+        "hint": "This option is for other average calculation systems we don't bear. If you want to create a custom template, please contact us. We will be happy to help you",
+        "contact": "+237690743737",
+        "email": "nessipjunior@gmail.com"
     }
 }
 export {
