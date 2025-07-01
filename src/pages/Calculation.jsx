@@ -13,8 +13,11 @@ import { useFieldArray, useForm } from "react-hook-form";
 import Input from "../components/Input";
 import Select from "../components/Select";
 import { noteGradeMentionGenerator } from "../utils/functions";
+import { use } from "react";
+import { NotesContext } from "../context/NotesContex";
 
 function Calculation() {
+  const { setNotes } = use(NotesContext);
   const params = useParams();
   const data = calculatorDataByTemplate[params.id];
 
@@ -48,18 +51,16 @@ function Calculation() {
 
   // Handle form submission
   const onSubmit = (data) => {
-    console.log("Form submitted:", data);
-    // Here you'll add the calculation logic
-    
     const subjectData = data.subjects;
     let formattedData = [];
 
     for (let index = 0; index < subjectData.length; index++) {
-        const averageData = noteGradeMentionGenerator(subjectData[index].average);
-        formattedData.push(averageData);
+      const averageData = noteGradeMentionGenerator(subjectData[index].average);
+      formattedData.push(averageData);
     }
 
-    console.log(formattedData);
+    setNotes(formattedData);
+    setIsModalOpen(false);
   };
 
   // Add new subject
