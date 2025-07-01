@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import Input from "../components/Input";
 import Select from "../components/Select";
+import { noteGradeMentionGenerator } from "../utils/functions";
 
 function Calculation() {
   const params = useParams();
@@ -49,6 +50,16 @@ function Calculation() {
   const onSubmit = (data) => {
     console.log("Form submitted:", data);
     // Here you'll add the calculation logic
+    
+    const subjectData = data.subjects;
+    let formattedData = [];
+
+    for (let index = 0; index < subjectData.length; index++) {
+        const averageData = noteGradeMentionGenerator(subjectData[index].average);
+        formattedData.push(averageData);
+    }
+
+    console.log(formattedData);
   };
 
   // Add new subject
@@ -132,6 +143,7 @@ function Calculation() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title="Calculate Your Average"
+        calculateAverage={handleSubmit(onSubmit)}
       >
         <div className="space-y-4">
           <div className="p-4 bg-blue-50 rounded-lg">
@@ -142,7 +154,7 @@ function Calculation() {
             </p>
           </div>
           // In your Modal component, replace the form with:
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <form className="space-y-4">
             <div className="space-y-4 max-h-[40vh] overflow-y-auto p-2">
               {fields.map((field, index) => (
                 <div
@@ -206,13 +218,6 @@ function Calculation() {
                 className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 + Add Another Subject
-              </button>
-
-              <button
-                type="submit"
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Calculate Average
               </button>
             </div>
           </form>
