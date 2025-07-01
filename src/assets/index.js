@@ -4,6 +4,7 @@ import logo from "./logo/logo.png"
 import home from "./images/home.webp"
 import processing from "./images/processing.webp"
 import calculation from "./images/calculation.webp"
+import result from "./images/result.webp"
 
 // ICONS
 import calculator from "./icons/calculator.png"
@@ -21,6 +22,7 @@ export {
     home,
     processing,
     calculation,
+    result,
     info,
     calculator,
     calculatorWhite,

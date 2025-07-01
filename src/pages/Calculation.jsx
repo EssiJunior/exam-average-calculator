@@ -1,7 +1,7 @@
 // REACT IMPORTS
 
 // ASSETS
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { info, calculation } from "../assets";
 
 import "../styles/calculation.css";
@@ -18,6 +18,8 @@ import { NotesContext } from "../context/NotesContex";
 
 function Calculation() {
   const { setNotes } = use(NotesContext);
+  const navigate = useNavigate();
+
   const params = useParams();
   const data = calculatorDataByTemplate[params.id];
 
@@ -56,11 +58,15 @@ function Calculation() {
 
     for (let index = 0; index < subjectData.length; index++) {
       const averageData = noteGradeMentionGenerator(subjectData[index].average);
-      formattedData.push(averageData);
+
+      //   Append object with subject code
+      const subjectDataWithCode = { ...averageData, subjectCode: subjectData[index].code, note: subjectData[index].average, credit: subjectData[index].credit };
+      formattedData.push(subjectDataWithCode);
     }
 
     setNotes(formattedData);
     setIsModalOpen(false);
+    navigate("/result");
   };
 
   // Add new subject

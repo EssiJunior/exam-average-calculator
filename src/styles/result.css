@@ -1,0 +1,8 @@
+.mobile-result {
+    background-image: url("../assets/images/calculation.webp");
+    @apply bg-cover bg-center bg-no-repeat;
+
+    @media (width > 768px) {
+        background-image: none;
+    }
+}
