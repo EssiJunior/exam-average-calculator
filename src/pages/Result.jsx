@@ -80,6 +80,10 @@ function Result() {
           <div>
             <Button text="Download Result" handleClick={handleDownload} />
           </div>
+
+          <div className="text-black/60 border-t border-gray-200 pt-2 mt-10">
+            Developed with love by <a href="http://essijunior.com" className="text-secondary hover:text-primary">@essijunior</a>
+          </div>
         </div>
       </div>
 
