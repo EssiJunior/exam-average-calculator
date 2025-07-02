@@ -24,7 +24,7 @@ const SplashContent = () => {
   }, []);
 
   return (
-    <div className="relative splash w-screen h-screen flex flex-col items-center justify-center bg-secondary">
+    <div className="relative splash w-dvh h-dvh flex flex-col items-center justify-center bg-secondary">
       <img src={logo} alt="logo" loading="lazy" />
       <h2>Result is loading...</h2>
 
