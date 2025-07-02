@@ -66,6 +66,9 @@ function Result() {
             <span className="font-bold gradient__text">{average}</span> /4
           </div>
           <div>
+            <Button text="Calculate" handleClick={() => calculateAverage(notes)} />
+          </div>
+          <div>
             <Button text="Download Result" handleClick={handleDownload} />
           </div>
         </div>

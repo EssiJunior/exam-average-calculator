@@ -61,18 +61,20 @@ function noteGradeMentionGenerator(note) {
 }
 
 function calculateAverage(notes) {
-    let sum = 0;
+    let sumNotes = 0;
+    let sumCredits = 0;
 
     for (let index = 0; index < notes.length; index++) {
         const element = notes[index];
 
         const average = element.formattedNote * element.credit;
-        sum += average;
+        sumNotes += average;
+        sumCredits += parseInt(element.credit);
     }
 
-    const result = sum / notes.length;
+    const result = sumNotes / sumCredits;
 
-    return Math.round(result * 100) / 100;
+    return result.toFixed(2);
 }
 
 export {
