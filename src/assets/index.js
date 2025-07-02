@@ -1,4 +1,7 @@
+// LOGOS
 import logo from "./logo/logo.png"
+import logoEJLight from "./logo/logo_ej_light.png"
+import logoEJDark from "./logo/logo_ej_dark.png"
 
 // IMAGES
 import home from "./images/home.webp"
@@ -19,6 +22,8 @@ import uy1 from './templates/UY1.png'
 
 export {
     logo,
+    logoEJLight,
+    logoEJDark,
     home,
     template,
     calculation,
