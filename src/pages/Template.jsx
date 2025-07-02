@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 
 // ASSETS
-import { processing } from "../assets";
+import { template } from "../assets";
 
 import "../styles/template.css";
 import { useState } from "react";
 import { templateCards } from "../utils/data";
+import Breadcrumb from "../components/Breadcrumb";
 
 // Card data
 
@@ -22,6 +23,10 @@ function Template() {
       {/* Texts */}
       <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-template max-md:p-5">
         <div className="blur-card p-5 flex flex-col justify-center items-start gap-10 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Template', href: '/template' }
+          ]} />
           <p>
             Allright, let's do this! <span className="motion-emoji">🤓</span>
           </p>
@@ -78,8 +83,9 @@ function Template() {
       {/* Illustration */}
       <div className="hidden md:flex justify-center items-center bg-secondary/20">
         <img
-          src={processing}
-          alt="home"
+          src={template}
+          alt="template"
+          loading="lazy"
           className="w-[100%] h-[100%] object-cover"
         />
       </div>

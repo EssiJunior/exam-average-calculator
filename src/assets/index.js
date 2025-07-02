@@ -2,7 +2,7 @@ import logo from "./logo/logo.png"
 
 // IMAGES
 import home from "./images/home.webp"
-import processing from "./images/processing.webp"
+import template from "./images/template.webp"
 import calculation from "./images/calculation.webp"
 import result from "./images/result.webp"
 
@@ -20,7 +20,7 @@ import uy1 from './templates/UY1.png'
 export {
     logo,
     home,
-    processing,
+    template,
     calculation,
     result,
     info,

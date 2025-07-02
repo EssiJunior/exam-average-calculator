@@ -15,6 +15,7 @@ import Select from "../components/Select";
 import { noteGradeMentionGenerator } from "../utils/functions";
 import { use } from "react";
 import { NotesContext } from "../context/NotesContex";
+import Breadcrumb from "../components/Breadcrumb";
 
 function Calculation() {
   const { setNotes } = use(NotesContext);
@@ -38,7 +39,6 @@ function Calculation() {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     defaultValues: {
       subjects: [{ code: "", average: "", credit: "3" }],
@@ -60,7 +60,12 @@ function Calculation() {
       const averageData = noteGradeMentionGenerator(subjectData[index].average);
 
       //   Append object with subject code
-      const subjectDataWithCode = { ...averageData, subjectCode: subjectData[index].code, note: subjectData[index].average, credit: subjectData[index].credit };
+      const subjectDataWithCode = {
+        ...averageData,
+        subjectCode: subjectData[index].code,
+        note: subjectData[index].average,
+        credit: subjectData[index].credit,
+      };
       formattedData.push(subjectDataWithCode);
     }
 
@@ -83,7 +88,15 @@ function Calculation() {
     >
       {/* Texts */}
       <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-calculation max-md:p-5">
-        <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
+        <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded relative">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Template", href: "/template" },
+              { label: "Calculation", href: `/calculation/${params.id}` },
+            ]}
+            className={" max-md:bg-white "}
+          />
           {params.id !== "custom" && (
             <p>
               Here we go ! <span className="motion-emoji">🚀</span>
@@ -166,7 +179,7 @@ function Calculation() {
               {fields.map((field, index) => (
                 <div
                   key={field.id}
-                  className="grid grid-cols-12 gap-3 items-start"
+                  className="flex justify-between gap-2 items-center"
                 >
                   {/* Subject Code */}
                   <Input
@@ -175,7 +188,6 @@ function Calculation() {
                     register={register}
                     errors={errors}
                     index={index}
-                    className="col-span-4"
                     type="text"
                   />
 
@@ -186,7 +198,6 @@ function Calculation() {
                     register={register}
                     errors={errors}
                     index={index}
-                    className="col-span-3"
                     type="number"
                   />
 
@@ -197,7 +208,7 @@ function Calculation() {
                     register={register}
                     errors={errors}
                     index={index}
-                    className="col-span-3"
+                    className="h-full"
                     options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
                   />
 

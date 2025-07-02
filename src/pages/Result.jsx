@@ -11,6 +11,7 @@ import RESULT from "../PDF/RESULT";
 import Button from "../components/Button";
 import { useReactToPrint } from "react-to-print";
 import withResultSplashScreen from "../hoc/withResultSplashScreen";
+import Breadcrumb from "../components/Breadcrumb";
 
 function Result() {
   const [average, setAverage] = useState(0);
@@ -27,16 +28,24 @@ function Result() {
   return (
     <main className="template md:h-dvh w-full grid md:grid-rows-1 grid-cols-1 md:grid-cols-[1.5fr_2fr] bg-white text-black max-md:font-black relative overflow-hidden">
       {/* Texts */}
-      <div className="overflow-auto flex flex-col justify-center items-start gap-5 h-auto mobile-result p-5 max-md:h-dvh">
-        <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
+      <div className="overflow-auto flex flex-col justify-start items-start gap-5 mobile-result p-5 max-md:h-dvh">
+        <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 w-full rounded">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Template", href: "/template" },
+              { label: "Result", href: `/result` },
+            ]}
+            className={' max-md:bg-white'}
+          />
           {/* TABLE */}
           <p>
             Here is your result ! <span className="motion-emoji">✨</span>
           </p>
 
-          <table className="w-full">
+          <table className="max-w-full divide-y divide-gray-200">
             <thead className="bg-primary/70">
-              <tr className="[&_th]:p-2  divide-x divide-gray-100">
+              <tr className="[&_th]:p-2 divide-x divide-gray-100">
                 <th>Subject Code</th>
                 <th>Note</th>
                 <th>Formatted Note</th>
@@ -45,7 +54,7 @@ function Result() {
                 <th>Mention</th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white divide-y divide-gray-200 overflow-auto">
               {notes.map((note, index) => (
                 <tr key={index} className="[&_td]:p-2">
                   <td className="bg-primary/50 font-bold">

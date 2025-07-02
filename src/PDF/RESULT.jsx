@@ -2,7 +2,7 @@ import React from "react";
 
 function RESULT({ notes, average }) {
   return (
-    <div className="overflow-auto flex flex-col justify-center items-start gap-5 max-md:h-dvh mobile-result p-5">
+    <div className="overflow-auto flex flex-col justify-center items-start gap-5 max-md:h-dvh mobile-result p-5 relative">
       <table className="w-full">
         <thead className="bg-secondary/70">
           <tr className="[&_th]:p-2  divide-x divide-gray-100">
@@ -31,6 +31,10 @@ function RESULT({ notes, average }) {
       <div className="w-full mt-10 flex text-black text-2xl">
         <span>Average - </span>
         <span className="font-bold gradient__text">{average}</span> /4
+      </div>
+
+      <div className="absolute bottom-5 right-5 text-2xl bg-primary text-black/70">
+        Developed with love by <a href="http://essijunior.com" className="text-black">@essijunior</a>
       </div>
     </div>
   );

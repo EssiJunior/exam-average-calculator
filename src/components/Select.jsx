@@ -10,7 +10,7 @@ const Select = ({register, index, className, label, name, options}) => {
         {...register(`subjects.${index}.${name}`, {
           required: true,
         })}
-        className="w-full px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
       >
         {options.map((option) => (
           <option key={option} value={option}>
