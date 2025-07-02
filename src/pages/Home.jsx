@@ -64,7 +64,12 @@ function Home() {
 
       {/* Illustration */}
       <div className="hidden md:flex justify-center items-center bg-secondary/20">
-        <img src={home} alt="home" className="w-[100%] h-[100%] object-cover" />
+        <img
+          src={home}
+          alt="home"
+          className="w-[100%] h-[100%] object-cover"
+          loading="lazy"
+        />
       </div>
     </main>
   );

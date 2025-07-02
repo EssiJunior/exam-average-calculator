@@ -30,7 +30,7 @@ const SplashContent = () => {
 
       {!showContent && <Loader />}
 
-      <div className="absolute bottom-5 right-5 text-white/60">
+      <div className="absolute top-5 right-5 text-white/60">
         Developed with love by <a href="http://essijunior.com" className="text-white">@essijunior</a>
       </div>
     </div>

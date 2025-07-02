@@ -113,6 +113,7 @@ function Calculation() {
                 src={info}
                 alt="info"
                 className="w-5 hover:opacity-80 transition-opacity"
+                loading="lazy"
               />
               <span className="tooltip-text absolute -right-5 bottom-[calc(100%+10px)] max-sm:w-[100%] w-[320px] max-sm:text-[11px] text-[12px]">
                 {data.description}
@@ -155,6 +156,7 @@ function Calculation() {
           src={calculation}
           alt="home"
           className="w-[100%] h-[100%] object-cover"
+          loading="lazy"
         />
       </div>
 
