@@ -9,6 +9,7 @@ import Template from "./pages/Template";
 import Calculation from "./pages/Calculation";
 import Result from "./pages/Result";
 import NotFound from "./pages/NotFound";
+import InDevelopment from "./pages/InDevelopment";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path="/template" element={<Template />} />
         <Route path="/calculation/:id" element={<Calculation />} />
         <Route path="/result" element={<Result />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<InDevelopment />} />
+        <Route path="/signin" element={<InDevelopment />} />
       </Routes>
     </BrowserRouter>
   );

@@ -27,46 +27,47 @@ function Result() {
   return (
     <main className="template md:h-dvh w-full grid md:grid-rows-1 grid-cols-1 md:grid-cols-[1.5fr_2fr] bg-white text-black max-md:font-black relative overflow-hidden">
       {/* Texts */}
-      <div className="overflow-auto flex flex-col justify-center items-start gap-5 max-md:h-dvh mobile-result p-5">
-        {/* TABLE */}
-        <p>
-          Here is your result ! <span className="motion-emoji">✨</span>
-        </p>
+      <div className="overflow-auto flex flex-col justify-center items-start gap-5 h-auto mobile-result p-5 max-md:h-dvh">
+        <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
+          {/* TABLE */}
+          <p>
+            Here is your result ! <span className="motion-emoji">✨</span>
+          </p>
 
-        <table className="w-full">
-          <thead className="bg-primary/70">
-            <tr className="[&_th]:p-2  divide-x divide-gray-100">
-              <th>Subject Code</th>
-              <th>Note</th>
-              <th>Formatted Note</th>
-              <th>Credit</th>
-              <th>Grade</th>
-              <th>Mention</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {notes.map((note, index) => (
-              <tr key={index} className="[&_td]:p-2">
-                <td className="bg-primary/50 font-bold">{note.subjectCode}</td>
-                <td>{note.note}</td>
-                <td>{note.formattedNote}</td>
-                <td>{note.credit}</td>
-                <td>{note.grade}</td>
-                <td>{note.mention}</td>
+          <table className="w-full">
+            <thead className="bg-primary/70">
+              <tr className="[&_th]:p-2  divide-x divide-gray-100">
+                <th>Subject Code</th>
+                <th>Note</th>
+                <th>Formatted Note</th>
+                <th>Credit</th>
+                <th>Grade</th>
+                <th>Mention</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {notes.map((note, index) => (
+                <tr key={index} className="[&_td]:p-2">
+                  <td className="bg-primary/50 font-bold">
+                    {note.subjectCode}
+                  </td>
+                  <td>{note.note}</td>
+                  <td>{note.formattedNote}</td>
+                  <td>{note.credit}</td>
+                  <td>{note.grade}</td>
+                  <td>{note.mention}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
 
-        <div className="w-full mt-10 flex">
-          <span>Average - </span>
-          <span className="font-bold gradient__text">{average}</span> /4
-        </div>
-        <div>
-          <Button
-            text="Download Result"
-            handleClick={handleDownload}
-          />
+          <div className="w-auto mt-10 flex bg-white ">
+            <span>Average - </span>
+            <span className="font-bold gradient__text">{average}</span> /4
+          </div>
+          <div>
+            <Button text="Download Result" handleClick={handleDownload} />
+          </div>
         </div>
       </div>
 

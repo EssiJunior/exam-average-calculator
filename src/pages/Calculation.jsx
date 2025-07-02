@@ -83,7 +83,7 @@ function Calculation() {
     >
       {/* Texts */}
       <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-calculation max-md:p-5">
-        <div className="p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
+        <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded">
           {params.id !== "custom" && (
             <p>
               Here we go ! <span className="motion-emoji">🚀</span>

@@ -22,6 +22,27 @@
 
     --primary-color: var(--primary-color);
     --secondary-color: var(--secondary-color);
+
+
+    --grey-900: hsl(256, 43%, 7%);
+    --grey-800: hsl(240, 24%, 13%);
+    --grey-700: hsl(243, 26%, 15%);
+    --grey-600: hsl(252, 9%, 22%);
+    --grey-500: hsl(259, 13%, 28%);
+    --grey-400: hsl(254, 22%, 32%);
+
+    --grey-300: hsl(251, 13%, 68%);
+    --grey-200: hsl(240, 15%, 76%);
+    --grey-100: hsl(240, 21%, 88%);
+
+    --surface-1: var(--grey-900);
+    --surface-2: var(--grey-800);
+    --surface-3: var(--grey-100);
+
+    --border-1: var(--grey-100);
+    /* top */
+    --border-2: var(--grey-200);
+    /* bottom */
 }
 
 body {
@@ -45,6 +66,45 @@ body {
     display: inline-block;
     animation: move-up-down 3s ease-in-out infinite;
     transform-origin: 50% 90%;
+}
+
+
+div.blur-card {
+
+    @media (width < 768px) {
+        max-inline-size: 500px;
+        margin-inline: auto;
+        padding: 21px;
+
+        display: grid;
+        gap: 1lh;
+
+        --border-width: 1px;
+        border-radius: 1rem;
+        position: relative;
+
+        background: hsl(from var(--surface-3) h s l / 0.45);
+        backdrop-filter: blur(4px);
+        color: black;
+        font-weight: 500;
+    }
+}
+
+
+div.blur-card::before {
+
+    @media (width < 768px) {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        border-radius: inherit;
+        border: var(--border-width) solid transparent;
+        background: linear-gradient(var(--border-1), var(--border-2)) border-box;
+        mask: linear-gradient(white, white) border-box,
+            linear-gradient(white, white) padding-box;
+        mask-composite: subtract;
+    }
 }
 
 @keyframes move-up-down {
