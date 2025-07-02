@@ -34,7 +34,7 @@ function RESULT({ notes, average }) {
       </div>
 
       <div className="absolute bottom-5 right-5 text-2xl bg-primary text-black/70">
-        Developed with love by <a href="http://essijunior.com" className="text-black">@essijunior</a>
+        Developed with love by <a href="https://essijunior.com" className="text-black">@essijunior</a>
       </div>
     </div>
   );
