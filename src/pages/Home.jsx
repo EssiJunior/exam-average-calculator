@@ -75,5 +75,6 @@ function Home() {
   );
 }
 
-export default withSplashScreen(Home);
+export default Home;
+// export default withSplashScreen(Home);
 // export default withSplashScreen(Home);

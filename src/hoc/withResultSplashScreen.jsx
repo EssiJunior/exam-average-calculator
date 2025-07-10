@@ -18,7 +18,7 @@ const SplashContent = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(false);
-    }, 5000); // 5 seconds
+    }, 3000); // 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -53,7 +53,7 @@ export default function withResultSplashScreen(WrappedComponent) {
           this.setState({
             loading: false,
           });
-        }, 10000); // 10 seconds
+        }, 5000); // 5 seconds
       } catch (err) {
         console.log(err);
         this.setState({
