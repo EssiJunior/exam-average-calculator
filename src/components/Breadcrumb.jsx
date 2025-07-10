@@ -1,9 +1,7 @@
+import { useEffect, memo } from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
 
-const Breadcrumb = ({ items = [], className }) => {
-  const breadcrumbRef = useRef(null);
-
+const Breadcrumb = memo(function Breadcrumb({ items = [], className }) {
   // Initialize Lordicon
   useEffect(() => {
     if (window.loadLordIcon) {
@@ -45,6 +43,6 @@ const Breadcrumb = ({ items = [], className }) => {
       </ol>
     </nav>
   );
-};
+});
 
 export default Breadcrumb;

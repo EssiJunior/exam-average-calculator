@@ -1,9 +1,15 @@
 // src/components/Modal.jsx
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Modal = ({ isOpen, onClose, calculateAverage, title, children }) => {
+const Modal = memo(function Modal({
+  isOpen,
+  onClose,
+  calculateAverage,
+  title,
+  children,
+}) {
   const modalRef = useRef(null);
 
   // Close modal on Escape key
@@ -107,6 +113,6 @@ const Modal = ({ isOpen, onClose, calculateAverage, title, children }) => {
     </AnimatePresence>,
     document.body
   );
-};
+});
 
 export default Modal;

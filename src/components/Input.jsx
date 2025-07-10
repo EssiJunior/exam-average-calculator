@@ -1,6 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Input = ({label, name, register, errors, index, className, type}) => {
+const Input = memo(function Input({
+  label,
+  name,
+  register,
+  errors,
+  index,
+  className,
+  type,
+}) {
   return (
     <div className={className}>
       <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -11,7 +19,10 @@ const Input = ({label, name, register, errors, index, className, type}) => {
         {...register(`subjects.${index}.${name}`, {
           required: `${label.toUpperCase()} is required`,
           min: { value: 0, message: `Minimum ${type === "number" ? 0 : ""}` },
-          max: { value: 100, message: `Maximum ${type === "number" ? 100 : ""}` },
+          max: {
+            value: 100,
+            message: `Maximum ${type === "number" ? 100 : ""}`,
+          },
           valueAsNumber: type === "number" ? true : false,
         })}
         step="any"
@@ -29,6 +40,6 @@ const Input = ({label, name, register, errors, index, className, type}) => {
       )}
     </div>
   );
-};
+});
 
 export default Input;

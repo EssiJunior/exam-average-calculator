@@ -1,8 +1,8 @@
-// REACT IMPORTS
-import React from "react";
+import React, { memo } from "react";
+
 import "./loader.css";
 
-const Loader = () => {
+const Loader = memo(function Loader() {
   return (
     <div className="loader relative w-[54px] h-[54px] mt-10 rounded-[10px]">
       {Array.from({ length: 12 }).map((_, index) => (
@@ -13,6 +13,6 @@ const Loader = () => {
       ))}
     </div>
   );
-};
+});
 
 export default Loader;

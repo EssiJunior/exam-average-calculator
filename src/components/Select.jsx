@@ -1,6 +1,13 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Select = ({register, index, className, label, name, options}) => {
+const Select = memo(function Select({
+  register,
+  index,
+  className,
+  label,
+  name,
+  options,
+}) {
   return (
     <div className={className}>
       <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -20,6 +27,6 @@ const Select = ({register, index, className, label, name, options}) => {
       </select>
     </div>
   );
-};
+});
 
 export default Select;
