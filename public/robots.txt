@@ -1,0 +1,6 @@
+# robots.txt for Scoreify
+
+User-agent: *
+Disallow:
+
+Sitemap: https://scoreify.essijunior.com/sitemap.xml
