@@ -109,6 +109,7 @@ function Result() {
           src={result}
           alt="home"
           className="w-[100%] h-[100%] object-cover"
+          loading="lazy"
         />
       </div>
 

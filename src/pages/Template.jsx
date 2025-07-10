@@ -63,6 +63,7 @@ function Template() {
                       src={card.icon}
                       alt={card.title}
                       className="w-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-gray-800">
