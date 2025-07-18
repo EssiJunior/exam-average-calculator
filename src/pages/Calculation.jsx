@@ -87,7 +87,7 @@ function Calculation() {
       autoFocus
     >
       {/* Texts */}
-      <div className="overflow-auto flex justify-start items-center max-md:h-dvh mobile-calculation max-md:p-5">
+      <div className="overflow-auto flex justify-start items-center max-md:h-dvh max-md:p-5">
         <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 max-md:w-full rounded relative">
           <Breadcrumb
             items={[
@@ -148,6 +148,12 @@ function Calculation() {
             </div>
           )}
         </div>
+        {/* <img
+          src={calculation}
+          alt="home"
+          className="md:hidden block w-[100%] h-[100%] object-cover bg-red-300 fixed z-10"
+          loading="lazy"
+        /> */}
       </div>
 
       {/* Illustration */}

@@ -1,12 +1,3 @@
-.mobile-result {
-    background-image: url("../assets/images/result.webp");
-    @apply bg-cover bg-center bg-no-repeat;
-
-    @media (width > 768px) {
-        background-image: none;
-    }
-}
-
 @media (max-width: 768px) {
     .mobile-table-container {
         -webkit-overflow-scrolling: touch;

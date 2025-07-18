@@ -28,7 +28,7 @@ function Result() {
   return (
     <main className="template md:h-dvh w-full grid md:grid-rows-1 grid-cols-1 md:grid-cols-[1.5fr_2fr] bg-white text-black max-md:font-black relative overflow-hidden">
       {/* Texts */}
-      <div className="overflow-auto flex flex-col justify-start items-start gap-5 mobile-result p-5 max-md:h-dvh">
+      <div className="overflow-auto flex flex-col justify-start items-start gap-5 p-5 max-md:h-dvh">
         <div className="blur-card p-5 flex flex-col justify-center items-start gap-2 max-md:backdrop-blur-md max-md:bg-white/40 w-full rounded overflow-hidden">
           <Breadcrumb
             items={[
@@ -101,6 +101,12 @@ function Result() {
             </a>
           </div>
         </div>
+        {/* <img
+          src={result}
+          alt="home"
+          className="md:hidden block w-[100%] h-[100%] object-cover bg-red-300 fixed z-10"
+          loading="lazy"
+        /> */}
       </div>
 
       {/* Illustration */}
