@@ -2,6 +2,8 @@
 import { useRef, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ReactLenis } from 'lenis/react';
+import { cancelFrame, frame } from 'motion/react';
+
 
 // PAGES
 import Home from "./pages/Home";
