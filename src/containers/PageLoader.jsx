@@ -10,7 +10,8 @@ const PageLoader = () => {
         src={logo}
         alt="Logo"
         loading="eager"
-        width={120}
+        width={160}
+        height={160}
         className="animate-pulse"
       />
     </div>

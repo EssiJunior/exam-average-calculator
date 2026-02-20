@@ -19,12 +19,12 @@ function Home() {
           <p>
             Hey <span className="motion-emoji">🫡</span>
           </p>
-          <p className="">
+          <h1 className="">
             You're on{" "}
             <span className="font-black md:text-[45px] sm:text-[35px] text-[25px] gradient__text">
               Scoreify
             </span>
-          </p>
+          </h1>
           <p>
             You want to be sure of{" "}
             <span className="gradient__text">your average</span> ? You want to

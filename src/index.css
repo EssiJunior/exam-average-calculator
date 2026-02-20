@@ -4,10 +4,16 @@
 @theme {
     --color-primary: #ff9900;
     --color-secondary: #146eb4;
+
+    --font-fugaz: "Fugaz One",  sans-serif;
+    --font-work: "Work Sans", sans-serif;
+
 }
 
 :root {
-    font-family: "Edu NSW ACT Hand Pre", cursive;
+    --font-fugaz: "Fugaz One",  sans-serif;
+    --font-work: "Work Sans", sans-serif;
+
     line-height: 1.5;
     font-weight: 400;
 
@@ -20,8 +26,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --primary-color: var(--primary-color);
-    --secondary-color: var(--secondary-color);
+    --primary-color: #ff9900;
+    --secondary-color: #146eb4;
 
 
     --grey-900: hsl(256, 43%, 7%);
@@ -48,7 +54,31 @@
 body {
     margin: 0 auto;
     min-width: 320px;
-    /* max-width: 1480px; */
+    max-width: 1480px;
+    font-family: var(--font-work);
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    scrollbar-width: thin;
+
+    @media (prefers-color-scheme:dark) {
+        scrollbar-color: var(--primary) #000000;
+    }
+
+    @media (prefers-color-scheme:light) {
+        scrollbar-color: var(--primary) #ffffff;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-fugaz);
 }
 
 /* Utils */
