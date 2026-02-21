@@ -1,5 +1,9 @@
 # Exam Average Calculator Frontend
 
+[![React.js](https://img.shields.io/badge/React.js-000000?style=for-the-badge&logo=React&logoColor=#61DAFB)](https://reactnative.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Motion](https://img.shields.io/badge/Motion-3178C6?style=for-the-badge&logo=framer&logoColor=white)](https://motion.dev/)
+
 This is the frontend for a web application that calculates the weighted average (Moyenne Générale Pondérée - MGP) for University of Yaounde I students.
 
 This project was created with [Vite](https://vitejs.dev/) and [React](https://reactjs.org/).
